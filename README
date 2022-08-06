@@ -22,7 +22,7 @@ Confusion matrix:
 8 [ 0  1  0  0  0  0  0  0 40  0]
 9 [ 0  0  0  1  0  1  0  0  0 43]]
 
-(By definition a confusion matrix  is such that  is equal to the number of observations known to be in group  and predicted to be in group.)
+(By definition a confusion matrix is such that Cij is equal to the number of observations known to be in group i and predicted to be in group j)
 
 ---------------------------------------------------------------------------------------------------------------------
 
