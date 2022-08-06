@@ -4,7 +4,7 @@ The classifier takes an 8*8 pixel greyscale image as input and classifies it int
 Support Vector Machine Classifier with gamma = 0.001 was used.
 Around 25% of the Data Set was used to test the model. 
 
-------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
 The resultant accuracy score was found to be greater than 96%.
 
 The Confusion Matrix is as follows
@@ -24,7 +24,7 @@ Confusion matrix:
 
 (By definition a confusion matrix  is such that  is equal to the number of observations known to be in group  and predicted to be in group.)
 
---------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
 
 -The source code of the project is the python file "DigitClassifier.py"
 -A test image(The number '2' in grayscale 8x8 pixels) is available in the file "two3.jpg"
