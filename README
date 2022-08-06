@@ -2,22 +2,29 @@ Hand Written Digit Recognizer
 
 The classifier takes an 8*8 pixel greyscale image as input and classifies it into one of the 10 digits.
 Support Vector Machine Classifier with gamma = 0.001 was used.
-Around 25% of the Data Set was used to test the model. The resultant accuracy score was found to be greater than 96%.
+Around 25% of the Data Set was used to test the model. 
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+The resultant accuracy score was found to be greater than 96%.
+
 The Confusion Matrix is as follows
 
 Confusion matrix:
-[[42  0  0  0  1  0  0  0  0  0]
- [ 0 46  0  0  0  0  0  0  0  0]
- [ 0  0 43  0  0  0  0  0  0  0]
- [ 0  0  0 40  0  2  0  1  4  0]
- [ 0  0  0  0 45  0  0  0  1  2]
- [ 0  0  0  0  0 44  1  0  0  0]
- [ 0  0  0  0  0  0 47  0  0  0]
- [ 0  0  0  0  0  0  0 45  0  0]
- [ 0  1  0  0  0  0  0  0 40  0]
- [ 0  0  0  1  0  1  0  0  0 43]]
+   0   1  2  3  4  5  6  7  8  9
+0 [42  0  0  0  1  0  0  0  0  0]
+1 [ 0 46  0  0  0  0  0  0  0  0]
+2 [ 0  0 43  0  0  0  0  0  0  0]
+3 [ 0  0  0 40  0  2  0  1  4  0]
+4 [ 0  0  0  0 45  0  0  0  1  2]
+5 [ 0  0  0  0  0 44  1  0  0  0]
+6 [ 0  0  0  0  0  0 47  0  0  0]
+7 [ 0  0  0  0  0  0  0 45  0  0]
+8 [ 0  1  0  0  0  0  0  0 40  0]
+9 [ 0  0  0  1  0  1  0  0  0 43]]
 
 (By definition a confusion matrix  is such that  is equal to the number of observations known to be in group  and predicted to be in group.)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
 -The source code of the project is the python file "DigitClassifier.py"
 -A test image(The number '2' in grayscale 8x8 pixels) is available in the file "two3.jpg"
