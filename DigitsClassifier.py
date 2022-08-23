@@ -16,8 +16,14 @@ digits_data_train_y = digits_data_train.iloc[:,-1]
 digits_data_train_x = digits_data_train.iloc[:,0:-1]
 
 #split test data set into attributes and corresponding class
-digits_data_test_y = digits_data_test.iloc[:,-1]
-digits_data_test_x = digits_data_test.iloc[:,0:-1]
+
+n = int(len(digits_data_test)/2)
+digits_data_test_y = digits_data_test.iloc[:n,-1]
+digits_data_test_x = digits_data_test.iloc[:n,0:-1]
+
+#splitting to form the cross validation data set
+digits_data_crossvalidate_y = digits_data_test.iloc[n:,-1]
+digits_data_crossvalidate_x = digits_data_test.iloc[n:,0:-1]
 
 #reshape test and train attributes to 64 long list for each image
 digits_data_train_x = digits_data_train_x.values.reshape(-1,64)
@@ -28,12 +34,12 @@ classifier=svm.SVC(kernel='rbf',gamma=0.001,C=1)
 #train the model
 classifier.fit(digits_data_train_x,digits_data_train_y)
 
-#test the model
-expected = digits_data_test_y
-predicted = classifier.predict(digits_data_test_x)
+#test the model with cross validation
+expected = digits_data_crossvalidate_y
+predicted = classifier.predict(digits_data_crossvalidate_x)
 
-#analyze the confusion matrix and accuracy score
-print("Confusion matrix and Accuracy Score after testing:")
+#analyze the confusion matrix and accuracy score after cross validation
+print("Confusion matrix and Accuracy Score after cross validation:")
 print("Confusion matrix:")
 confusion=metrics.confusion_matrix(expected,predicted)
 labels = ['0', '1', '2', '3','4','5','6','7','8','9']
@@ -42,6 +48,19 @@ df = pd.DataFrame(confusion, columns=labels, index=labels)
 print(df)
 print("Accuracy Score: ",accuracy_score(expected,predicted))
 
+#test the model
+expected = digits_data_test_y
+predicted = classifier.predict(digits_data_test_x)
+
+#analyze the confusion matrix and accuracy score after testing
+print("Confusion matrix and Accuracy Score after testing:")
+print("Confusion matrix:")
+confusion=metrics.confusion_matrix(expected,predicted)
+labels = ['0', '1', '2', '3','4','5','6','7','8','9']
+df = pd.DataFrame(confusion, columns=labels, index=labels)
+
+print(df)
+print("Accuracy Score: ",accuracy_score(expected,predicted))
 
 #
 # Predict hand written image
