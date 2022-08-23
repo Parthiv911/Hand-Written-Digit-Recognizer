@@ -2,7 +2,7 @@ Hand Written Digit Recognizer
 
 The classifier takes an 8*8 pixel greyscale image as input and classifies it into one of the 10 digits.
 Support Vector Machine Classifier with kernal = "rbf" and parameters gamma = 0.001 and C=1 was found to give the best results and hence was used.
-Around 25% of the Data Set(Total 1797 images) was used to test the model. 
+Around 25% of the Data Set was used to test the model. 
 
 -----------------------------------------------------------------------------------------------------------------------
 The resultant accuracy score was found to be greater than 96%.
